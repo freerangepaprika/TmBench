@@ -4,11 +4,4 @@
 - Input data is in /data
 - Use check_results.ipynb for easy access
 
-Note: for the notebook you need the following python libraries (latest version is OK):
-sklearn
-
-scipy
-
-numpy
-
-pandas
+Note: for the notebook you need some basic Python libs, use `pip install -r requirements.txt` to install them.
