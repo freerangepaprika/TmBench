@@ -6,6 +6,9 @@
 
 Note: for the notebook you need the following python libraries (latest version is OK):
 sklearn
+
 scipy
+
 numpy
+
 pandas
