@@ -37,7 +37,4 @@ We also insert *synthetic* sequences we designed to asses the models' abilities 
 - `REVERSED`: the chain of amino acids is reversed 
 - `SHUFFLED`: the chain of amino acids is shuffled
 
-The latter two sets are particularly interesting to asses a model's understanding of amino acid frequency: reversing or shuffling an amino acid sequence does not modify its composition, although function and melting temperature are obviously highly altered. 
-
-
-# Benchmarks / results
+The latter two sets are particularly interesting to asses a model's understanding of amino acid frequency: reversing or shuffling an amino acid sequence does not modify its composition, although function and melting temperature are obviously highly altered.
