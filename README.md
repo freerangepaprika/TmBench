@@ -22,14 +22,14 @@ However, to have an easy look at the results we suggest you use the `check_resul
 Two types of experimental $T_m$ data are used in our benchmark :
 - High-throughput Thermal Proteome Profiling (TPP), located in `/data/TPP/tpp.fasta`:
   - 31998 proteins from the **Meltome Atlas** [Jarzab et al. 2020].
-  - 1567 proteins from the **Toxoplasmagondii** organism (todo)
-  - 1279 proteins from the **Trypanosomacruzi** organism (todo)
-  - 1064 proteins from the **Geobacillusthermoleovorans** organism (todo)
+  - 1567 proteins from the **Toxoplasmagondii** organism [Herneisen et al. 2022]
+  - 1279 proteins from the **Trypanosomacruzi** organism [Coutinho et al. 2021]
+  - 1064 proteins from the **Geobacillusthermoleovorans** organism [Oztug et al. 2020]
 - Low-throughput data, mostly produced by Differential Scanning Calorimetry (DSC):
-  - **SCooP_DB**: 246 proteins annotated with $T_m$ from DSC results currated from litterature
-  - **NanoMelt_DB**: 723 antibodies
-  - **CSP_DB**: 98 Cold Shock Proteins (CSP) with $T_m$ dtermined using various differential scanning techniques. They are highly similar proteins with (very) different $T_m$, therfore very useful in assessing predictors' ability to capture subtle information.
-  - **PETases_DB**: 232 PET-degrading proteins annotated with $T_m$ using differential scanning techniques.
+  - **SCooP_DB**: 246 proteins annotated with $T_m$ from DSC results currated from litterature [Pucci et al., 2017]
+  - **NanoMelt_DB**: 723 antibodies [Ramon et al., 2025]
+  - **CSP_DB**: 98 Cold Shock Proteins (CSP) with $T_m$ dtermined using various differential scanning techniques [Perl et al. 2000]. They are highly similar proteins with (very) different $T_m$, therfore very useful in assessing predictors' ability to capture subtle information.
+  - **PETases_DB**: 232 PET-degrading proteins annotated with $T_m$ using differential scanning techniques [Norton-Baker et al. 2025]
 
 
 We also insert *synthetic* sequences we designed to asses the models' abilities to differentiate a random or modified variant from its real counterpart sequence. We propose the three following variants derived from our test set (TEST):
