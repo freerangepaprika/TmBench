@@ -5,7 +5,8 @@ This repo accompanies a paper introducing TmBench, a new benchmark study designe
 
 - Results of the models are in `/results`, one subdirectory per model
 - $T_m$ data is in `/data` under `/data/DSC` and `/data/TPP`
-- Be sure to check out the correlation plots, included at the end of the `check_results.ipynb` notebook !
+
+Be sure to check out the correlation plots, included at the end of the `check_results.ipynb` notebook !
   
 ## Quick start
 
