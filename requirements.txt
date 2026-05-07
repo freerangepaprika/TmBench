@@ -5,3 +5,4 @@ numpy==2.2.3
 pandas==2.2.3
 ipykernel==6.29.5
 matplotlib==3.10.9
+seaborn==0.13.2

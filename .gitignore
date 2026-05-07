@@ -1,5 +1,5 @@
 .vscode
 p.sh
 tmbench
-tmbench_run
 src
+t.ipynb
