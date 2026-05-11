@@ -60,3 +60,5 @@ We finetuned a number of pLMs ourselves. You can run the ones from the paper dir
 
 - Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it `conda activate tmbench_run`
 - Run the example: `python3 run.py`
+- The following inputs may be modified 
+  - input fasta: 
