@@ -47,7 +47,7 @@ We finetuned a number of pLMs ourselves. You can run the ones from the paper dir
 
 $\Rightarrow$ Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
 
-- Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it with `conda activate tmbench_run`
+- Create the conda environment: `conda env create -f environment.yml` (can take a few minutes) and activate it with `conda activate tmbench_run`
 - Run the example: `python3 run.py` from the `/finetuned_models` directory.
 
 Running with no arguments will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'out.csv', using a GPU is available.
