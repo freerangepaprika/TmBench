@@ -29,7 +29,7 @@ Two types of experimental $T_m$ data are used in our benchmark :
   - 1064 proteins from the **Geobacillusthermoleovorans** organism [Oztug et al. 2020]
 - Low-throughput data, mostly produced by Differential Scanning Calorimetry (DSC):
   - **SCooP_DB**: (`/data/DSC/scoop.fasta`) 246 proteins annotated with $T_m$ from DSC results curated from litterature [Pucci et al., 2017].
-  - **NanoMelt_DB**: (`/data/DSC/nanomelt.fasta`)723 antibodies [Ramon et al., 2025] 
+  - **NanoMelt_DB**: (`/data/DSC/nanomelt.fasta`) 723 antibodies [Ramon et al., 2025] 
   - **CSP_DB**: (`/data/DSC/csp.fasta`) 98 Cold Shock Proteins (CSP) with $T_m$ determined using various DSC-type [Perl et al. 2000]. These are highly similar proteins with very different $T_m$ values, making them particularly useful for assessing predictors' ability to capture subtle information. For a more complete annotations check data/DSC/csp_full.fasta.
   - **PETases_DB**: (`/data/DSC/petases.fasta`) 232 PET-degrading proteins annotated with $T_m$ using differential scanning techniques [Norton-Baker et al. 2025].
 
