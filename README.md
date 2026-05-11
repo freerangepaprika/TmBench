@@ -64,19 +64,18 @@ We curated 7 pLM-based $T_m$ predictors from literature, following instructions 
 
 We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results).
 
-$\rightarrow$ Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
+$\Rightarrow$ Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
 
 - Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it with `conda activate tmbench_run`
-- Run the example: `python3 run.py` from the `/finetuned_models` directory
+- Run the example: `python3 run.py` from the `/finetuned_models` directory.
 
+Running with no arguments will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'out.csv', using a GPU is available.
 
 Usage: 
 
 `python3 run.py [-h] [-m MODEL] [-i INPUT_FASTA] [-o OUTFILE] [-d DEVICE]`
 
-Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. Running with no arguments
-will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'example.csv', using a GPU is available.
-
+Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. 
 options:
 
   `-h, --help`            show this help message and exit
