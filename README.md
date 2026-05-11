@@ -45,7 +45,7 @@ We curated 7 pLM-based $T_m$ predictors from literature, following instructions 
 
 We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results).
 
-$\Rightarrow$ Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
+:exclamation: from the `finetuned_models` directory :exclamation: execute the following commands in you terminal:
 
 - Create the conda environment: `conda env create -f environment.yml` (can take a few minutes) and activate it with `conda activate tmbench_run`
 - Run the example: `python3 run.py` from the `/finetuned_models` directory.
