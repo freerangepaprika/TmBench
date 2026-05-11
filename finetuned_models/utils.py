@@ -3,6 +3,9 @@ from collections import namedtuple
 import pandas as pd
 import numpy as np
 
+from transformers import TrainingArguments, Trainer, set_seed
+from datasets import Dataset
+
 ### Code is largely inspired from Schmirler et al. (https://www.nature.com/articles/s41467-024-51844-2)
 ### We thank them for making everything easily accessible
 
@@ -55,8 +58,19 @@ def pre_process(base_model: "PretrainedModel", frame: pd.DataFrame, in_place=Fal
     if "ProstT5" in checkpoint_full_name:    
         frame['sequence']=frame.apply(lambda row : "<AA2fold> " + row["sequence"], axis = 1)  
 
-
     return frame
+
+def set_seeds(s):
+    torch.manual_seed(s)
+    np.random.seed(s)
+    random.seed(s)
+    set_seed(s)
+
+def create_dataset(tokenizer,seqs,labels):
+    tokenized = tokenizer(seqs, max_length=1024, padding=True, truncation=True)
+    dataset = Dataset.from_dict(tokenized)
+    dataset = dataset.add_column("labels", labels)
+    return dataset
 
 def ns_to_pretty_time(ns: int):
     secs = ns // 10**9

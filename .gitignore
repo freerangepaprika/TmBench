@@ -1,5 +1,5 @@
 .vscode
 p.sh
 tmbench
-t.ipynb
 src/__pycache__
+./finetuned_models/_training.py

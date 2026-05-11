@@ -4,7 +4,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from .training import create_dataset
+# from ._training import create_dataset
 
 class ModelTester:
     def __init__(self, finetuner: Finetune | str):
