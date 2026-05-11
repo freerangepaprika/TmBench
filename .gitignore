@@ -3,3 +3,4 @@ p.sh
 tmbench
 src/__pycache__
 ./finetuned_models/_training.py
+t.ipynb
