@@ -1,11 +1,10 @@
 from finetune import *
-import os, torch
+
+import os, torch,time, datetime
 import numpy as np
 import pandas as pd
 from Bio import SeqIO
 import argparse
-
-
 
 ### Code is largely inspired from Schmirler et al. (https://www.nature.com/articles/s41467-024-51844-2)
 ### We thank them for making everything easily accessible !!
@@ -54,7 +53,9 @@ def run(finetuned_model_id: str, input_fasta_path: str, outfile: str, dev = None
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run one of our finetuned models on an input FASTA file.\nI will try to run on a cuda device by default if there's one on your system. If you do not want this add '-d cpu'.")
+    parser = argparse.ArgumentParser(description= \
+        "Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. Running with no arguments will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'example.csv', using a GPU is available."
+    )
     parser.add_argument("-m", "--model", type=str, default = 'FINE_650M_FULL_MELTOME', help=f"Finetuned model ID. Choose among: {', '.join(all_models)}")
     parser.add_argument("-f", "--input_fasta", type=str, default = './example.fasta', help="Path to the input FASTA file (e.g., './example.fasta')")
     parser.add_argument("-o", "--outfile", type=str, default = './out.csv', help="Path to the output CSV file (e.g., './example.csv')")
@@ -72,6 +73,8 @@ def main():
     if not os.path.exists(args.input_fasta):
         msg = f"Input fasta '{args.input_fasta}' not found :/"
         raise FileNotFoundError(msg)
+    
+    nb_seqs = sum(1 for _ in SeqIO.parse(args.input_fasta, "fasta"))
 
     # checking destination (propose to make dir if not exists)
     dest_dirname = os.path.dirname(args.outfile)
@@ -91,12 +94,16 @@ def main():
         device = torch.device(args.device)
 
     # Run the model
+    t = time.time_ns()
     run(
         finetuned_model_id=args.model,
         input_fasta_path=args.input_fasta,
         outfile=args.outfile,
         dev=device
     )
+    e = time.time_ns()
+    s = ns_to_pretty_time(e-t)
+    print(f"Time for {nb_seqs} sequences on device='{device}':", s)
 
 
 if __name__ == '__main__':

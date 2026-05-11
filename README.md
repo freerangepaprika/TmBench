@@ -59,6 +59,26 @@ We curated 7 pLM-based $T_m$ predictors from literature, following instructions 
 We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results). Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
 
 - Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it `conda activate tmbench_run`
-- Run the example: `python3 run.py`
-- The following inputs may be modified 
-  - input fasta: 
+- Run the example: `python3 run.py` from the `/finetuned_models` directory
+
+
+Usage: 
+
+`python3 run.py [-h] [-m MODEL] [-f INPUT_FASTA] [-o OUTFILE] [-d DEVICE]`
+
+Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. Running with no arguments
+will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'example.csv', using a GPU is available.
+
+options:
+
+  `-h, --help`            show this help message and exit
+
+  `-m, --model MODEL`     Finetuned model ID. Choose among: FINE_650M_NO_INT, FINE_650M_FULL_MELTOME, ESM_650M_FLIP, FINE_3B_NO_INT
+
+  `-f, --input_fasta INPUT_FASTA`
+                        Path to the input FASTA file (e.g., './example.fasta')
+
+  `-o, --outfile OUTFILE`
+                        Path to the output CSV file (e.g., './example.csv')
+
+  `-d, --device DEVICE`   Device to use: 'cuda', 'cpu'. If 'auto', checks if CUDA available and uses it, otherwise cpu.

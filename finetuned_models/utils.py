@@ -57,3 +57,10 @@ def pre_process(base_model: "PretrainedModel", frame: pd.DataFrame, in_place=Fal
 
 
     return frame
+
+def ns_to_pretty_time(ns: int):
+    secs = ns // 10**9
+    hours, tmp = divmod(secs, 3600)
+    minutes, secs = divmod(tmp, 60)
+    s = f"{str(hours):0>2}h{str(minutes):0>2}min:{str(secs):0>2}s"
+    return s

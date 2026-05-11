@@ -1,2 +1,0 @@
-Please note code in this directory is mainly taken from "Fine-tuning protein language models boosts predictions across diverse tasks" by Schmirler et al. (specifically https://github.com/RSchmirler/data-repo_plm-finetune-eval/tree/main/notebooks/finetune)
-We thank them for making finetuning pLMs easy :)
