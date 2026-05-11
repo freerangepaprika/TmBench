@@ -81,7 +81,7 @@ class ModelTester:
         with torch.no_grad():
             for batch in tqdm(test_dataloader):
                 input_ids = batch['input_ids'].to(device)
-                input_labels = [l.item() for l in batch['labels']]
+                input_labels = [l for l in batch['labels']]
                 all_labs += input_labels
                 
                 attention_mask = batch['attention_mask'].to(device)

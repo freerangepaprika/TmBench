@@ -46,7 +46,9 @@ The latter two sets are particularly interesting for assessing a model's underst
 
 # Running prediction models
 
-We curated 7 pLM-based $T_m$ predictors from literature:
+## Models from litterature
+
+We curated 7 pLM-based $T_m$ predictors from literature, following instructions from the corresponding githubs:
 - PRIME: https://github.com/ai4protein/Pro-Prime
 - TemStaPro: https://github.com/ievapudz/TemStaPro
 - PPTStab: https://github.com/raghavagps/pptstab/
@@ -55,5 +57,9 @@ We curated 7 pLM-based $T_m$ predictors from literature:
 - ThermoFormer: https://github.com/mingchen-li/ThermoFormer
 - TMProt: https://huggingface.co/spaces/loschmidt/tmprot
 
+## Homemade finetuned models
 
-[Note: 6/05/2026] Our home-made finetuned models will be available shortly through a HuggingFace repository.
+We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results). Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
+
+- Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it `conda activate tmbench_run`
+- Run the example: `python3 run.py`

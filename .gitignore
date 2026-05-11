@@ -2,3 +2,4 @@
 p.sh
 tmbench
 t.ipynb
+src/__pycache__
