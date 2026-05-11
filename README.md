@@ -43,9 +43,14 @@ The latter two sets are particularly interesting for assessing a model's underst
 
 # Running prediction models
 
+Here we explain how to reproduce the results (CSV files in the `/results` directory) by running the models yourself.
+
+- For the models from the literature, we provide the corresponding GitHub repositories.
+- For our fine‑tuned models, we include code that makes it easy to run them on your own machine.
+
 ## Models from litterature
 
-We curated 7 pLM-based $T_m$ predictors from literature, following instructions from the corresponding githubs:
+We curated 7 pLM-based $T_m$ predictors from literature, following instructions using the links below:
 - PRIME: https://github.com/ai4protein/Pro-Prime
 - TemStaPro: https://github.com/ievapudz/TemStaPro
 - PPTStab: https://github.com/raghavagps/pptstab/
@@ -54,11 +59,14 @@ We curated 7 pLM-based $T_m$ predictors from literature, following instructions 
 - ThermoFormer: https://github.com/mingchen-li/ThermoFormer
 - TMProt: https://huggingface.co/spaces/loschmidt/tmprot
 
-## Homemade finetuned models
 
-We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results). Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
+## Homemade fine-tuned models
 
-- Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it `conda activate tmbench_run`
+We finetuned a number of pLMs ourselves. You can run the ones from the paper directly from this repository, using another conda environment (we seperated both to avoid heavy downloading if you just want to check out the results).
+
+$\rightarrow$ Execute the following commands in you terminal, **launched from the `finetuned_models` directory**:
+
+- Create the conda environment: `conda env create -f environment.yml` (should take 2-3 minutes tops) and activate it with `conda activate tmbench_run`
 - Run the example: `python3 run.py` from the `/finetuned_models` directory
 
 
