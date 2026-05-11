@@ -56,10 +56,11 @@ def main():
     parser = argparse.ArgumentParser(description= \
         "Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. Running with no arguments will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'example.csv', using a GPU is available."
     )
-    parser.add_argument("-m", "--model", type=str, default = 'FINE_650M_FULL_MELTOME', help=f"Finetuned model ID. Choose among: {', '.join(all_models)}")
-    parser.add_argument("-f", "--input_fasta", type=str, default = './example.fasta', help="Path to the input FASTA file (e.g., './example.fasta')")
-    parser.add_argument("-o", "--outfile", type=str, default = './out.csv', help="Path to the output CSV file (e.g., './example.csv')")
-    parser.add_argument("-d", "--device", type=str, default="auto", help="Device to use: 'cuda', 'cpu'. If 'auto', checks if CUDA available and uses it, otherwise cpu.")
+    parser.add_argument("-m", "--model", type=str, default = 'FINE_650M_FULL_MELTOME', help=f"Finetuned model ID. Choose among: {', '.join(all_models)}. Default is FINE_650M_FULL_MELTOME.")
+    parser.add_argument("-i", "--input_fasta", type=str, default = './example.fasta', help="Path to the input FASTA file. Default is './example.fasta'.")
+    parser.add_argument("-o", "--outfile", type=str, default = './out.csv', help="Path to the output CSV file. Default is './out.csv'.")
+    parser.add_argument("-d", "--device", type=str, default="auto", help="Device to use: 'cuda', 'cpu'. If 'auto', checks if CUDA available and uses it, otherwise cpu. Default is 'auto'.")
+    parser.add_argument("-w", "--overwrite", type=bool, default=False, help="Set to 'True' to ignore if destination file already exists and to overwrite, else set to 'False' to keep checking. Default is 'False'.")
 
     # parse args
     args = parser.parse_args()
@@ -77,6 +78,7 @@ def main():
     nb_seqs = sum(1 for _ in SeqIO.parse(args.input_fasta, "fasta"))
 
     # checking destination (propose to make dir if not exists)
+
     dest_dirname = os.path.dirname(args.outfile)
     if dest_dirname != '' and not os.path.exists(dest_dirname):
         msg = f"Destination directory {dest_dirname} not found"
@@ -84,6 +86,13 @@ def main():
         if resp == 'y':
             os.makedirs(dest_dirname, exist_ok=True)
         else:
+            print('Exiting..')
+            exit(0)
+
+    # check 
+    if os.path.exists(args.outfile) and not args.overwrite:
+        resp = input(f'Destination file already exists, overwrite ? To avoid this message in the future use --overwrite True ? y / n: ')
+        if resp == 'n':
             print('Exiting..')
             exit(0)
     

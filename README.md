@@ -72,7 +72,7 @@ $\rightarrow$ Execute the following commands in you terminal, **launched from th
 
 Usage: 
 
-`python3 run.py [-h] [-m MODEL] [-f INPUT_FASTA] [-o OUTFILE] [-d DEVICE]`
+`python3 run.py [-h] [-m MODEL] [-i INPUT_FASTA] [-o OUTFILE] [-d DEVICE]`
 
 Runs one of our finetuned models on an input FASTA file of your choice. It will try to run on a cuda device by default if there's one on your system; if you do not want this use '-d cpu'. Running with no arguments
 will launch the FINE_650M_FULL_MELTOME model on 'example.fasta' and save as 'example.csv', using a GPU is available.
@@ -81,12 +81,15 @@ options:
 
   `-h, --help`            show this help message and exit
 
-  `-m, --model MODEL`     Finetuned model ID. Choose among: FINE_650M_NO_INT, FINE_650M_FULL_MELTOME, ESM_650M_FLIP, FINE_3B_NO_INT
+  `-m, --model MODEL`     Finetuned model ID. Choose among: FINE_650M_NO_INT, FINE_650M_FULL_MELTOME, ESM_650M_FLIP, FINE_3B_NO_INT. Default is FINE_650M_FULL_MELTOME.
 
-  `-f, --input_fasta INPUT_FASTA`
-                        Path to the input FASTA file (e.g., './example.fasta')
+  `-i, --input_fasta INPUT_FASTA`
+                        Path to the input FASTA file. Default is './example.fasta'.
 
   `-o, --outfile OUTFILE`
-                        Path to the output CSV file (e.g., './example.csv')
+                        Path to the output CSV file. Default is './out.csv'.
 
-  `-d, --device DEVICE`   Device to use: 'cuda', 'cpu'. If 'auto', checks if CUDA available and uses it, otherwise cpu.
+  `-d, --device DEVICE`   Device to use: 'cuda', 'cpu'. If 'auto', checks if CUDA available and uses it, otherwise cpu. Default is 'auto'.
+
+  `-w, --overwrite OVERWRITE`
+                        Set to 'True' to ignore if destination file already exists and to overwrite, else set to 'False' to keep checking. Default is 'False'.
