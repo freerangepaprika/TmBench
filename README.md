@@ -1,5 +1,6 @@
 # Welcome to TmBench !
 
+[Note 11/05/2026] - /src directory to run homemade finetuned models is in progress, thank you for understanding :) 
 This repo accompanies a paper introducing TmBench, a new benchmark study designed to rigorously evaluate protein thermal **stability** prediction models based on protein language models (pLMs). The benchmark integrates diverse experimental data sources, such as thermal proteome profiling and differential scanning calorimetry, to assess model performance across different conditions.
 
 
